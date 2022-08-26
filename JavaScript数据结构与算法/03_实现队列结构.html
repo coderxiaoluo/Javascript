@@ -1,0 +1,61 @@
+<!-- coderLuo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function Queue() {
+      this.items = []
+      // 将元素添加到队列中
+      Queue.prototype.enqueue = function (element) {
+        this.items.push(element)
+      }
+      // 从队列中删除元素
+      Queue.prototype.dequeue = function () {
+        return this.items.shift()
+      }
+      // 查看前端的元素(最前面的一个)
+      Queue.prototype.front = function () {
+        return this.items[0]
+      }
+      // 查看队列是否为空
+      Queue.prototype.isEmpry = function () {
+        return this.items.length == 0
+      }
+      // 查看队列中元素个数
+      Queue.prototype.size = function () {
+        return this.items.length
+      }
+      // toString
+      Queue.prototype.toString = function () {
+        let resultString = ''
+        for (let i = 0; i < this.items.length; i++) {
+          resultString += this.items[i] + ''
+        } 
+        return resultString
+      }
+    }
+
+    let queue = new Queue()
+    queue.enqueue(2)
+    queue.enqueue(4)
+    queue.enqueue(6)
+    queue.enqueue(8)
+    console.log(queue)
+
+    queue.dequeue()
+    alert(queue)
+
+  </script>
+
+</body>
+
+</html>

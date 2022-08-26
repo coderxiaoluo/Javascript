@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function Stack() {
+      // 栈的属性
+      this.items = []
+      // 1.将元素压入栈
+      // this.push = function() {
+      // }
+      
+      Stack.prototype.push = function (element) {
+        this.items.push(element)
+      }
+
+      // 2.将元素取出栈
+      Stack.prototype.pop = function () {
+        return this.items.pop()
+      }
+      // 3.查看栈顶元素
+
+      Stack.prototype.peek = function () {
+        // 获取到最后一个元素
+        return this.items[this.items.length - 1]
+      }
+
+      // 4.判断栈是否为空
+      Stack.prototype.isEmpty = function () {
+        return this.items.length == 0
+      }
+
+      // 5.获取栈中元素的个数
+      Stack.prototype.size = function () {
+        return this.items.length
+      }
+      // 6.toString方法
+      Stack.prototype.toString = function () {
+        let resultString = ''
+        for (let i = 0; i < this.items.length; i++) {
+          resultString += this.items[i] + ''
+        }
+        return resultString
+      }
+    }
+
+    let s = new Stack()
+
+    s.push(10)
+    s.push(20)
+    s.push(1)
+    console.log(s)
+    // alert(s.peek())
+  </script>
+</body>
+
+</html>
