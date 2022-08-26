@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 
+    请补全JavaScript代码，实现效果如下：
+1. 当点击某个栏目（题库、面试、学习、求职）时，该栏目背景色变为'#25bb9b'，其它栏目背景色位'#fff'。
+2. 当选中某个栏目时，下方内容就展示索引值相同的类名为".items"的"li"元素
+注意：
+1. 必须使用DOM0级标准事件（onclick）
+2. 已使用自定义属性存储了栏目的索引值。点击栏目获取索引值，使用索引值控制类名为"items"下的"li"元素
+   -->
+  <meta charset="UTF-8">
+  <style>
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .options li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: solid 1px #ddd;
+    }
+
+    .items li {
+      width: 405px;
+      height: 405px;
+      display: none;
+      border: solid 1px #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class='options'>
+    <li data-type="0" style='background-color: #25bb9b;'>题库</li>
+    <li data-type="1">面试</li>
+    <li data-type="2">学习</li>
+    <li data-type="3">求职</li>
+  </ul>
+  <ul class='items'>
+    <li style="display: block;">牛客题库，包含编程题、选择题等</li>
+    <li>为你的面试提供一站式服务</li>
+    <li>校招学习来牛客</li>
+    <li>求职中有什么难题，可以联系我们</li>
+  </ul>
+
+  <script>
+    var options = document.querySelector('.options');
+    var optionItems = [].slice.call(document.querySelectorAll('.options li'));
+    var items = [].slice.call(document.querySelectorAll('.items li'));
+    // 补全代码
+    // 通过forEach循环遍历拿到每一个元素和索引
+    optionItems.forEach((item, index) => {
+      // 给每个li加click
+      item.addEventListener('click', () => {
+        // 里面再次循环
+        optionItems.forEach((t, i) => {
+          // 点击的时候先让之前的样式取消
+          t.style.backgroundColor = '#fff'
+          items[i].style.display = 'none'
+        })
+        // 在添加样式
+        item.style.backgroundColor = '#25bb9b'
+        items[index].style.display = 'block'
+      })
+    })
+
+
+  </script>
+</body>
+
+</html>
