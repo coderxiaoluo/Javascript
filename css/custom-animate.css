@@ -1,0 +1,57 @@
+
+@keyframes rotateScale {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotateScale {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotateScale {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes rotateScale {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+.service-block .icon-bg,
+.theme-separator:before,
+.service-block-two .icon-bg{
+    -webkit-animation-name: rotateScale; 
+    -webkit-animation-duration: 20s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    
+    -moz-animation-name: rotateScale; 
+    -moz-animation-duration: 20s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    
+    -ms-animation-name: rotateScale; 
+    -ms-animation-duration: 20s; 
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: rotateScale; 
+    animation-duration: 20s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
