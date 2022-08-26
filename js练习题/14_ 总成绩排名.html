@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <!-- 
+        描述
+请补全JavaScript代码，要求将数组参数中的对象以总成绩(包括属性"chinese"、"math"、"english")从高到低进行排序并返回。 
+       -->
+  <script type="text/javascript">
+    const _rank = array => {
+      // 补全代码
+        array.sort(function(a,b) {
+          let lg = a.chinese + a.math + a.english
+          let rg = b.chinese + b.math + b.english
+          return  rg - lg
+        })
+        return array
+    }
+    let a = [
+      {
+        chinese:60,
+        math:70,
+        english:70
+      },
+      {
+        chinese:60,
+        math:70,
+        english:90
+      },
+      {
+        chinese:60,
+        math:90,
+        english:90
+      }
+    ]
+    _rank(a)
+  
+  </script>
+</body>
+
+</html>

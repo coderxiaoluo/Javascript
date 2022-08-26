@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <!-- 
+描述
+请补全JavaScript代码，要求返回参数数字的千分位分隔符字符串。
+示例1
+输入：_comma(12300)
+输出：'12,300'
+
+       -->
+  <script type="text/javascript">
+    function _comma(number) {
+      // 补全代码
+      let num = number.toString() //将数字转换成字符串
+      // 拿到后面三位
+      const end = num.slice(num.length - 3)
+      console.log(end)
+      const conent = num.slice(num.length - 6,num.length - 3)
+      console.log(conent)
+      // 拿到前面几位
+      const start = num.slice(0, num.length - 6)
+      console.log(start)
+      if(num.length >6) {
+        return (start+ ',' +conent +','+end)
+      } else if(num.length < 4){
+        return end
+      }else{
+        return (start +','+end)
+      }
+    }
+    console.log(_comma(133))
+
+//     function _comma(number) {
+//     // 补全代码
+//     let arr = Math.abs(number).toString().split('').reverse();
+//     let i = 3;
+//     while (i < arr.length) {
+//         arr.splice(i, 0, ',');
+//         i += 4;
+//     }
+//     let str = arr.reverse().join('');
+//     return number >= 0 ? str : '-' + str;
+// }
+// console.log ( _comma(124343534))
+  </script>
+</body>
+
+</html>

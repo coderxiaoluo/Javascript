@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+        描述
+请补全JavaScript代码，要求根据下拉框选中的条件变换重新渲染列表中展示的商品，且只展示符合条件的商品。
+注意：
+1. 必须使用DOM0级标准事件（onchange）
+2. 建议使用ES6的filter方法
+       -->
+  <select name="" id="">
+    <option value="0">请选择销量范围</option>
+    <option value="1">&lt100</option>
+    <option value="2">100~500</option>
+    <option value="3">&gt500</option>
+  </select>
+  <ul>
+    <li>牛客logo马克杯</li>
+    <li>无盖星空杯</li>
+    <li>老式茶杯</li>
+    <li>欧式印花杯</li>
+  </ul>
+
+  <script>
+    var cups = [
+      { type: 1, price: 100, color: 'black', sales: 60, name: '牛客logo马克杯' },
+      { type: 2, price: 40, color: 'blue', sales: 100, name: '无盖星空杯' },
+      { type: 4, price: 60, color: 'green', sales: 200, name: '老式茶杯' },
+      { type: 3, price: 50, color: 'green', sales: 600, name: '欧式印花杯' }
+    ]
+    var select = document.querySelector('select');
+    var ul = document.querySelector('ul');
+    // 补全代码
+
+    let frg = document.createDocumentFragment()
+    select.onchange = function () {
+      if (this.value == 1) {
+        ul.innerHTML = ''
+        let a = cups.filter(function (item) {
+          return item.sales < 100
+        })
+        for (let items of a) {
+          let liEl = document.createElement('li')
+          liEl.textContent = `${items.name}`
+          frg.append(liEl)
+        }
+        ul.append(frg)
+      }
+
+      if (this.value == 2) {
+        ul.innerHTML = ''
+        let a = cups.filter(function (item) {
+          return item.sales >= 100 && item.sales <= 500
+        })
+        for (let items of a) {
+          let liEl = document.createElement('li')
+          liEl.textContent = `${items.name}`
+          frg.append(liEl)
+        }
+        ul.append(frg)
+      }
+
+
+      if (this.value == 3) {
+        ul.innerHTML = ''
+        let a = cups.filter(function (item) {
+          return item.sales > 500
+        })
+        for (let items of a) {
+          let liEl = document.createElement('li')
+          liEl.textContent = `${items.name}`
+          frg.append(liEl)
+        }
+        ul.append(frg)
+      }
+    }
+
+ 
+  </script>
+</body>
+
+</html>

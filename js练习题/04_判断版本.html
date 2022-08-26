@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <!-- 
+描述
+请补全JavaScript代码，该函数接收两个参数分别为旧版本、新版本，当新版本高于旧版本时表明需要更新，返回true，否则返回false。
+注意：
+1. 版本号格式均为"X.X.X"
+2. X∈[0,9]
+3. 当两个版本号相同时，不需要更新描述
+请补全JavaScript代码，该函数接收两个参数分别为旧版本、新版本，当新版本高于旧版本时表明需要更新，返回true，否则返回false。
+注意：
+1. 版本号格式均为"X.X.X"
+2. X∈[0,9]
+3. 当两个版本号相同时，不需要更新
+        
+       -->
+  <script type="text/javascript">
+    const _shouldUpdate = (oldVersion, newVersion) => {
+      // 补全代码
+        //先将字符串的点去了 使用split方法(注意这个方法会自动转化为数组)
+        let oldarray = oldVersion.split('.')
+        // 在利用join方法转化成字符串
+        let Version = oldarray.join('')
+        // 最后转化Number类型  使用 Number() 或 parseInt()
+        let oldVersions = Number(Version)
+
+        let newarray = newVersion.split('.')
+        let Version2 = newarray.join('')
+        let newVersions = Number(Version2)
+
+        return oldVersions < newVersions
+        
+    }
+    _shouldUpdate('0.0.2', '0.0.0')
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <!-- 
+        描述
+请补全JavaScript代码，要求根据参数动态生成"li"标签页码并插入"ul"标签下。要求如下：
+1. "allItem"为总数据项个数，"pageItem"为每页的数据项个数
+2. "li"标签内容为当前页码数，页码从1开始
+示例1
+输入：
+_createPage(13,2)
+输出：
+"li"长度为7，"li"内容依次为"1","2","3","4","5","6","7"
+       -->
+  <ul id="ul">
+
+  </ul>
+  <script type="text/javascript">
+    // 获取元素
+    const ulEl = document.querySelector('ul')
+    // 生成文档碎片
+    const frg = document.createDocumentFragment()
+
+    const _createPage = (allItem, pageItem) => {
+      // 补全代码
+     let item = Math.ceil(allItem  / pageItem)
+     for(let i = 1; i <= item; i++) {
+      let liEl = document.createElement('li')
+      liEl.textContent = i
+      frg.append(liEl)
+     }
+     ulEl.append(frg)
+    }
+    _createPage(13,2)
+  </script>
+</body>
+
+</html>

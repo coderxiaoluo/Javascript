@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+          描述
+请补全JavaScript代码，要求以boolean的形式返回两个Set对象参数是否一样，是则返回true，否则返回false。
+         -->
+  <script>
+    const _isSameSet = (s1, s2) => {
+      // 补全代码
+      if(s1.size !== s2.size){
+        return  false
+      }
+      return [...s1].every(i =>s2.has(i))
+    }
+    const s1 = new Set()
+    s1.add(20)
+    const s2 = new Set()
+    s2.add(20)
+    console.log(_isSameSet(s1,s2))
+  </script>
+</body>
+
+</html>

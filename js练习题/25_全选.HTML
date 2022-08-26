@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
+
+<body>
+  <!-- 
+    描述
+请补全JavaScript代码，实现以下效果：
+1. 选中"全选"框，以下所有选项全部勾选。
+2. 把"全选"框从选中状态勾选成未选中状态，其他复选框全部取消选中效果。
+3. 当其他复选框全部选中，"全选框"为选中状态。
+4. 当其他复选框有一个未选中，"全选框"取消选中状态。
+注意：
+1. 必须使用DOM0级标准事件（onchange）
+   -->
+  <ul>
+    <li>全选<input type='checkbox' id='all'></li>
+    <li>Java<input type='checkbox' class='item'></li>
+    <li>javaScript<input type='checkbox' class='item'></li>
+    <li>C++<input type='checkbox' class='item'></li>
+    <li>python<input type='checkbox' class='item'></li>
+    <li>.net<input type='checkbox' class='item'></li>
+  </ul>
+
+  <script>
+  const allEl = document.getElementById('all')
+  const itemEl = document.querySelectorAll('ul > li >.item')
+  console.log(itemEl)
+  console.log(allEl)
+
+
+  allEl.onchange = function() {
+    // 原生属性直接点属性
+    // console.log(this.checked)
+    for(let i = 0; i < itemEl.length; i++){
+      itemEl[i].checked = this.checked
+    }
+  }
+
+  for(let i = 0;i < itemEl.length; i++) {
+    itemEl[i].onchange = function() {
+     let  flag = true
+      for(let i = 0; i< itemEl.length; i++){
+        if(!itemEl[i].checked){
+          flag = false
+        }
+      }
+      allEl.checked = flag
+    }
+  }
+  </script>
+</body>
+
+</html>

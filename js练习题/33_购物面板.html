@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <caption>
+        商品
+      </caption>
+    </thead>
+    <tbody>
+      <tr>
+        <td>炸鸡</td>
+        <td>28元</td>
+        <td><button id="zjtaiduola">-</button></td>
+        <td><span id="zjsl">0</span></td>
+        <td><button id="zjtaishaola">+</button></td>
+      </tr>
+      <tr>
+        <td>可乐</td>
+        <td>5元</td>
+        <td><button id="kltaiduola">-</button></td>
+        <td><span id="klsl">0</span></td>
+        <td><button id="kltaishaola">+</button></td>
+      </tr>
+      <tr>
+        <td>总价：</td>
+        <td><span id="total">0</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="text/javascript">
+    // 补全代码
+    const zjSub = document.querySelector("#zjtaiduola")
+    const zjAdd = document.querySelector("#zjtaishaola")
+
+    const klSub = document.querySelector("#kltaiduola")
+    const klAdd = document.querySelector("#kltaishaola")
+
+    let zjslEl = document.querySelector("#zjsl")
+    let klslEl = document.querySelector("#klsl")
+    let total = document.querySelector("#total")
+
+    let zEl = 0
+    let kEl = 0
+
+    function subadd(num) {
+      zjSub.addEventListener('click', () => zjslEl.textContent = (zjslEl.textContent - num))
+      zjAdd.addEventListener('click', () => zjslEl.textContent = (Number((zjslEl.textContent)) + Number(num)))
+      fn(10)
+    }
+    subadd(28)
+
+    klSub.addEventListener('click', () => klslEl.textContent = (klslEl.textContent - 5))
+    klAdd.addEventListener('click', () => klslEl.textContent = (Number((klslEl.textContent)) + Number(5)))
+
+    // total.textContent  = `${zEl} + ${kEl}`
+  </script>
+</body>
+
+</html>

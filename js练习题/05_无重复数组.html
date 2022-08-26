@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+描述
+请补全JavaScript代码，实现一个函数，要求如下：
+1. 根据输入的数字范围[start,end]和随机数个数"n"生成随机数
+2. 生成的随机数存储到数组中，返回该数组
+3. 返回的数组不能有相同元素
+注意：
+1. 不需要考虑"n"大于数字范围的情况
+示例1
+输入：
+getUniqueNums(2,10,4)
+输出：
+[4,6,2,8]
+
+
+ -->
+  <script>
+    let arrays = []
+    let newArray = []
+    const _getUniqueNums = (start, end, n) => {
+      // 补全代码
+
+      for (let i = 1; i <= 5; i++) {
+        //                                   x        y    - x 
+        let a = Math.floor(Math.random() * (end - start)) + ( start) + 1
+        if(arrays.indexOf(a) === -1) {
+          // 没有就添加进去
+          arrays.push(a)
+        }else {
+          // 有就重新循环
+          i-= 1
+        }
+      }
+    }
+    _getUniqueNums(5, 20, 5)
+    console.log(arrays)
+  </script>
+</body>
+
+</html>

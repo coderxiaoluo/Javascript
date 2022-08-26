@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+        描述
+        请补全JavaScript代码，要求以字符串的形式返回文件名扩展名,文件名参数为"filename"。
+
+         -->
+  <script>
+    // 补全代码
+    const _getExFilename = (filename) => {
+      let index = filename.lastIndexOf(".")
+      const txt = filename.slice(0,index) && index !== -1 ? filename.slice(index) : ""
+      return txt
+    }
+    _getExFilename("text.html")
+  </script>
+</body>
+
+</html>

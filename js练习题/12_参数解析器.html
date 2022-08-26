@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+
+  描述
+请补全JavaScript代码，要求将字符串参数URL中的参数解析并以对象的形式返回。
+示例1
+输入：
+getParams('https://nowcoder.com/online?id=1&salas=1000')
+输出：
+{id:1, salas: 100}
+ -->
+  <script>
+    const _getParams = (url) => {
+      // 补全代码
+      // 首先截取拿到 ? 后面的字符串
+    const searchString = url.split('?').pop()
+    const params = new URLSearchParams(searchString)
+    let arr = []
+    // 遍历params里面的每一项 为什么可以遍历，因为 new URLSearchParams(searchString)实现了 entries方法 返回的是一个数组
+    // 通过解构赋值拿到里面的key和value
+    for(let [key,value]of params) {
+      let newarr = []
+          value = Number(value)
+          newarr.push(key,value)
+          arr.push(newarr)
+    }
+    console.log(Object.fromEntries(arr))
+    return Object.fromEntries(arr)
+
+    }
+    _getParams('https://scriptoj.com/problems?offset=100&limit=10')
+
+    // 
+    const _getParam = (url) => {
+      // 补全代码
+      // 首先截取拿到 ? 后面的字符串
+      // const searchString = url.split('?').pop()
+      var searchString = url.substring(url.indexOf('?'));
+      const params = new URLSearchParams(searchString)
+      const obj = Object.fromEntries(params)
+      console.log(obj)
+      return obj
+    }
+    _getParam('https://scriptoj.com/problems?offset=100&limit=10')
+
+
+    // 不知道为什么通过不了 
+  </script>
+</body>
+
+</html>
