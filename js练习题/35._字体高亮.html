@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 
+    描述
+请补全JavaScript代码，实现一个搜索字体高亮的效果。要求如下：
+1. 在input框中输入要搜索的内容，当点击查询按钮时，被搜索的字体样式变为加粗，背景色变为'yellow'
+2. 重新输入搜索文字，点击查询按钮时，去掉上一次的搜索效果，高亮显示效果只加在本次搜索文字上
+3. 如果搜索不到相关内容，清除之前的效果
+注意：
+1. 需要加粗的文字请使用b标签包裹
+2. 必须使用DOM0级标准事件（onclick）
+   -->
+  <input type="text">
+  <button style="margin-right: 80px">查询</button>
+  <div class="text" style="margin-top: 70px">
+    牛客网隶属于北京牛客科技有限公司，牛客网成立于 2014 年 9
+    月，是以科技和创新驱动的教育科技公司。牛客网坚持以前沿技术服务于技术、以人工智能和大数据提升学习效率，专注探索在线教育创新模式，致力于为技术求职者提供能力提升解决方案，同时为企业级用户提供更高效的招聘解决方案，并为二者搭建桥梁，构建从学习到职业的良性生态圈。
+    发展至今，牛客网在技术类求职备考、社群交流、企业招聘服务等多个垂直领域影响力均在行业中遥遥领先，产品矩阵包括IT题库、在线编程练习、线上课程、交流社区、竞赛平台、笔面试服务、ATS系统等，用户覆盖全国高校百万IT学习者并在高速增长中，同时也为京东、百度、腾讯、滴滴、今日头条、华为等200多家企业提供校园招聘、编程竞赛等线上服务，并收获良好口碑。
+  </div>
+
+  <script>
+    var text = document.querySelector(".text");
+    var search = document.querySelector("input");
+    const btn = document.querySelector("button");
+      // 补全代码
+      var article = String(text.innerText)//保存原文本
+      console.log(article)
+      btn.onclick = () => {
+        // 补全代码
+        var key = new String(search.value)
+        console.log(key)
+        var newV = article.replace(new RegExp(key, 'g'), `
+                    <b style="background-color:yellow">${key}</b>
+                `)
+        text.innerHTML = newV
+      }
+
+  </script>
+</body>
+
+</html>
