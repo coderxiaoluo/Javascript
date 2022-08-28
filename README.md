@@ -1,8 +1,6 @@
 # Javascript
 
-若不是生活所迫，谁会把自己弄的一身才华
-
-页面仔一枚
+若不是生活所迫，谁会把自己弄的一身才华(手动滑稽)
 
 专注JavaScript语言
 
@@ -36,8 +34,30 @@
 
 ...
 
-掌握上面的内容JavaScript也就差不多了
+掌握上面的内容JavaScript也就差不多了，重点是多敲，多做练习，把重点放在JavaScript上，把重点放在JavaScript上，把重点放在
 
-重点是多敲，多做练习
+JavaScript上，重要的事说三遍，因为不管前端框架更新有多快，它的底层都是基于JavaScript的，比如像vue2的响应式底层原理就是
+
+JavaScript的Object.defineProperty, vue3的响应式底层原理就是 Proxy和  Reflect，等等说明JavaScript的地位，JavaScript过十遍都不过分。
+
+没事的时候多背背八股文(面试题)，不然面试的时候怎么和hr聊，面试不过关，一月1300，比如hr问你Object.defineProperty和Proxy的区
+
+别是什么，该如何回答
+
+Object.defineProperty监听的是对象的属性，而Proxy监听的是对象的属性，
+
+Object.defineProperty需要遍历对象的每个属性，而Proxy则是直接**代理**对象，不需要遍历对象
+
+Proxy对新增的属性也可以监听，而Object.defineProperty不可以
+
+Proxy可以监听数组和函数的变化
+
+等等
 
 作者:**罗建波**
+
+gitee：https://gitee.com/coderxiaoluo
+
+CSDN:https://blog.csdn.net/m0_62336865?spm=1000.2115.3001.5343
+
+bilibili:https://space.bilibili.com/1810497501/
