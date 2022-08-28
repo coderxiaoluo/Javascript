@@ -1,0 +1,40 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+计算并返回给定数组 arr 中所有元素的总和
+输入描述：
+数组中的元素均为 Number 类型
+
+输入：
+[ 1, 2, 3, 4 ]
+输出：
+10
+ -->
+  <script>
+    function sum(arr) {
+      // 定义一个初始值
+      let num = 0
+      // 遍历数组
+      for(let item of arr) {
+        // 将每一项进行相加
+        num +=item
+      }
+      return num
+    }
+    sum([ 1, 2, 3, 4 ])
+  </script>
+
+</body>
+
+</html>

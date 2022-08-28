@@ -1,0 +1,48 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组
+
+示例1
+[1, 2, 3, 4, 2], 2
+[1, 3, 4]
+ -->
+  <script>
+    function remove(arr, item) {
+      // 定义一个新数组用于存放符合的数字
+      let newarr = []
+      // 将传进来的数组进行遍历
+      for (let i of arr) {
+        // 当 数组中不等于 item的值就存到新数组中
+        if (i !== item) {
+          newarr.push(i)
+        }
+      }
+      return newarr
+
+      // 方法二：用filter过滤
+      // let newarr = []
+      // const a = arr.filter(i =>{
+      //   if(i!==item) {
+      //    return newarr.push(i)
+      //   }
+      // })
+      // console.log(a)
+    }
+    remove([1, 2, 3, 4, 2], 2)
+  </script>
+
+</body>
+
+</html>

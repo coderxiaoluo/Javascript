@@ -1,0 +1,42 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+移除数组 arr 中的所有值与 item 相等的元素，直接在给定的 arr 数组上进行操作，并将结果数组返回
+
+示例1
+[1, 2, 2, 3, 4, 2, 2], 2
+[1, 3, 4]
+ -->
+  <script>
+    function removeWithoutCopy(arr, item) {
+      // let newarr = []
+      // for (let i of arr) {
+      //   if (i !== item) {
+      //     newarr.push(i)
+      //   }
+      // }
+      // console.log(newarr)
+      // return newarr
+        
+      while (arr.indexOf(item) !== -1) {
+            arr.splice(arr.indexOf(item), 1);
+        }
+        return arr
+    }
+    removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2)
+  </script>
+
+</body>
+
+</html>

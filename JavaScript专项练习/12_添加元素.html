@@ -1,0 +1,43 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+在数组 arr 末尾添加元素 item。结果返回新的数组。
+注意：不要直接修改数组 arr!!!
+
+示例1
+[1, 2, 3, 4],  10
+[1, 2, 3, 4, 10]
+ -->
+  <script>
+    function append(arr, item) {
+      // 第一种 
+      // return arr.concat(item)
+
+      // 第二种使用扩展运算符
+      // let newarr =[...arr,item]
+      // return newarr
+
+      // 第三中 先赋值给一个新数组 用新数组进行push
+      let newarr2 = arr
+      newarr2.push(item)
+      return newarr2
+
+
+    }
+    append([1, 2, 3, 4], 10)
+  </script>
+
+</body>
+
+</html>

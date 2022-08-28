@@ -1,0 +1,36 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    /* 
+    描述
+请补全JavaScript函数，要求以boolean的形式返回字符串参数中是否包含数字。
+    */
+
+    function _search(string) {
+      // 补全代码
+
+      let arr = string.split(''); // 所得数组每一项都是字符串
+      for (let i in arr) {
+        let temp = parseInt(arr[i]); // 将字符串转换为number或NaN
+        return typeof temp === 'number' ? true : false;
+      }
+    }
+
+    _search('123gsf')
+  </script>
+
+</body>
+
+</html>
