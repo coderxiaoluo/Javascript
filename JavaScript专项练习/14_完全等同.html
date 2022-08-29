@@ -1,0 +1,31 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+判断 val1 和 val2 是否完全等同
+ -->
+  <script>
+
+    function identity(val1, val2) {
+      // 方法一： '==='判断的话+0和-0会认为是相等的，NaN会认为是不相等的。
+      return val1 === val2
+
+      //方法二： Object.is() 方法判断两个值是否为同一个值。
+      return Object.is(val1,val2)
+    }
+    identity(10,)
+  </script>
+
+</body>
+
+</html>

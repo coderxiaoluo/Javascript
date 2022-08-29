@@ -1,0 +1,37 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+请补全JavaScript函数，要求将整数参数反转之后输出。
+示例：
+1. _reverse(0) -> 0
+2. _reverse(233) -> 332
+3. _reverse(-223) -> -322
+ -->
+  <script>
+    function _reverse(number) {
+      // 补全代码
+      let obj = (number + '').split('').reverse().join('')
+      if (obj.endsWith('-')) {
+        let a = obj.split('').pop().unshift('-')
+      return Number(a.join(''))
+      }else {
+        return Number(obj)
+      }
+    }
+    _reverse(223)
+  </script>
+
+</body>
+
+</html>
