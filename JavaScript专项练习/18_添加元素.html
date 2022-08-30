@@ -1,0 +1,38 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  描述
+在数组 arr 的 index 处添加元素 item。不要直接修改数组 arr，结果返回新的数组
+
+示例1
+输入：
+[1, 2, 3, 4], 'z', 2
+输出：
+[1, 2, 'z', 3, 4]
+
+ -->
+  <script>
+    function insert(arr, item, index) {
+      const newArr = [...arr]
+    newArr.splice(index, 0, item)
+    return newArr
+     
+     
+
+    }
+    insert([1, 2, 3, 4], 'z', 2)
+  </script>
+
+</body>
+
+</html>

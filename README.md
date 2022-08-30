@@ -40,9 +40,7 @@ JavaScript上，重要的事说三遍，因为不管前端框架更新有多快�
 
 JavaScript的Object.defineProperty, vue3的响应式底层原理就是 Proxy和  Reflect，等等说明JavaScript的地位，JavaScript过十遍都不过分。
 
-没事的时候多背背八股文(面试题)，不然面试的时候怎么和hr聊，面试不过关，一月1300，比如hr问你Object.defineProperty和Proxy的区
-
-别是什么，该如何回答
+没事的时候多背背八股文(面试题) 比如问你Object.defineProperty和Proxy的区别是什么，该如何回答
 
 Object.defineProperty监听的是对象的属性，而Proxy监听的是对象的属性，
 

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <!-- 
+
+      描述
+请补全JavaScript函数，根据参数数组创建li元素。
+要求：
+1. li元素的个数和数组的长度一样
+2. li元素的内容是数组中的每个元素
+3. 将创建的所有li元素插入到ul中
+     -->
+
+  <ul></ul>
+
+</body>
+<script type="text/javascript">
+  // 获取元素
+  const ulEl = document.querySelector("ul")
+  // 创建文档碎片 利于DOM性能
+  const frg = document.createDocumentFragment()
+  function createLi(array) {
+    // 将传进来的数组进行遍历
+    for(let item of array) {
+      // 创建li元素
+      const liEl = document.createElement('li')
+      // 添加内容
+      liEl.textContent = item
+      // 先将liEl添加到文档碎片中
+      frg.append(liEl)
+    }
+    // 循环结束后一次性放到ul元素上
+    ulEl.append(frg)
+
+  }
+  createLi(["Jack","罗建波", "张三"])
+</script>
+
+</html>
