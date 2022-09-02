@@ -1,0 +1,151 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 300px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    tr,
+    td,
+    th {
+      border: 1px solid #000;
+      padding: 10px;
+    }
+
+    th {
+      background-color: orangered;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn">年龄小到大</button>
+  <button class="btn">年龄大到小</button>
+  <button class="btn">默认排序</button>
+<br>
+  <button class="btn2">男性</button>
+  <button class="btn2">女性</button>
+  <button class="btn2">默认排序</button>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script>
+    // 数据优先
+    const list = [
+      {
+        id: 1,
+        name: '小明',
+        age: 16,
+        gender: "男"
+      },
+      {
+        id: 2,
+        name: '小芳',
+        age: 30,
+
+        gender: "女"
+      },
+      {
+        id: 3,
+        name: '小美',
+        age: 22,
+
+        gender: "女"
+      },
+      {
+        id: 4,
+        name: '小罗',
+        age: 20,
+
+        gender: "男"
+      }
+    ]
+
+    // 先准备一个函数 
+    function render(data) {
+      let frlg = document.createDocumentFragment()
+      let tbodyEl = document.querySelector("tbody")
+      tbodyEl.innerHTML = ''
+      data.forEach(item => {
+        let tr = document.createElement('tr')
+        tr.innerHTML = ` 
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.age}</td>
+        <td>${item.gender}</td>
+        `
+        frlg.append(tr)
+      })
+      tbodyEl.append(frlg)
+    }
+    render(list)
+
+    // 按照年龄排序 -》先搞定数据 -》渲染视图
+    //   let f1 = function(data) {
+    //     return data.sort((r1,r2)=>{
+    //       return r1.age - r2.age
+    //     }) 
+    //   }
+
+    //  console.log( f1(list))
+    //  let f2 = function(data) {
+    //     return data.sort((r1,r2)=>{
+    //       return r1.age - r2.age
+    //     }) 
+    //   }
+    //  console.log( f2(list))
+
+    // 将上面两个方法放到一个数组中
+    let ageSortArr = [data => data.map(item =>item).sort((r1, r2) => r1.age - r2.age), data => data.map(item =>item).sort((r1, r2) => r2.age - r1.age),data=>data]
+      // let a1 = function(list) {
+      // list.filter(item =>{
+      //     item.gender === "男"
+      //   })
+      // }
+      // a1(list)
+      // let a2 = function(list) {
+      // list.filter(item =>{
+      //     item.gender === "女"
+      //   })
+      // }
+      // a1(list)
+    let denderFilterArr = [data =>data.filter(item =>item.gender === "男"),data =>data.filter(item =>item.gender === "女"),data =>data]
+
+    let btn = document.querySelectorAll(".btn")
+    btn.forEach((item, index) => {
+      item.onclick = function () {
+        let newData = ageSortArr[index](list)
+        render(newData)
+      }
+    })
+
+let btn2 = document.querySelectorAll('.btn2')
+btn2.forEach((item,index) =>{
+  item.onclick = function() {
+    let newData = denderFilterArr[index](list)
+    render(newData)
+  }
+})
+  </script>
+
+</body>
+
+</html>
