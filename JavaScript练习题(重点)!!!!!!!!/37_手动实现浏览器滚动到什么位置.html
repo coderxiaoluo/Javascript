@@ -1,0 +1,60 @@
+<!-- coderxiaoluo  𝙨𝙝𝙖𝙙𝙤𝙬 𝙤𝙛 𝙩𝙝𝙚 𝙨𝙪𝙣-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 4000px;
+    }
+
+    .box {
+      position: fixed;
+      right: 30px;
+      bottom: 50px;
+      width: 40px;
+      height: 40px;
+      background-color: pink;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>hello world</h1>
+  <div class="box">返回</div>
+  <script>
+    // 获取元素
+    const box = document.querySelector('.box')
+    // 定义变量再外面，便于访问
+    let timer = 0
+    // 点击事件
+    box.onclick = () => {
+      // 定义一个定时器
+      timer = setInterval(() => {
+        // 每次减40px
+        document.documentElement.scrollTop -= 40
+      }, 17)
+    }
+    // 定义一个变量
+    let st = 0
+    // 定义浏览器滚动事件
+    window.onscroll = function () {
+      // 当卷去的高度小于或等于0时结束定时器
+      if (document.documentElement.scrollTop <= 0) {
+        clearInterval(timer)
+      }
+      // 当大于等于时结束定时器
+      if (document.documentElement.scrollTop >= st) {
+        clearInterval(timer)
+      }
+      st = document.documentElement.scrollTop
+    }
+  </script>
+
+</body>
+
+</html>
