@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>阅读吧</title>
+  <link rel="stylesheet" href="./css/iconfont/iconfont.css" />
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- TODO：请在下面实现需求 -->
+    <!-- 设置按钮图标 -->
+    <a @click="seting" class="iconfont icon-setting"></a>
+    <!-- 头部工具栏 -->
+    <transition name="fade">
+      <div class="header" v-show="CloseShow">
+        <ul class="tools">
+          <li class="container">
+            <div class="left">阅读主题</div>
+            <!-- 设置主题的圆形色块 -->
+            <div class="right" id="setBG" @click="btns(index)" v-for="(item ,index) in  bgList" :key="index">
+              <a :style="{backgroundColor:item}"
+                :class="[{'iconfont':activeIndex === index},{'icon-selected':activeIndex === index}]"></a>
+              <!-- <a style="background-color: #ebf4ea"></a>
+                <a style="background-color: #e9f2f5"></a>
+                <a style="background-color: #f6e8e4"></a>
+                <a style="background-color: #000000"></a> -->
+            </div>
+          </li>
+          <li class="container">
+            <div class="left">字体大小</div>
+            <!-- 设置字体大小的按钮 -->
+            <div class="set-font">
+              <a class="prev" @click="fzBtnMax">A-</a><b></b> <span class="lang">{{fontSizeBtn}}</span><b></b>
+              <a class="next" @click="fzBtnMin">A+</a>
+            </div>
+          </li>
+          <li class="container">
+            <!-- 关闭 x 图标 -->
+            <a @click="close" class="iconfont icon-close"></a>
+          </li>
+        </ul>
+      </div>
+    </transition>
+
+    <!-- 阅读区 -->
+    <p class="text-content" :style="{backgroundColor: colorIndex , color:hColor, fontSize: fontSizeBtn +'px', lineHeight: '28px'}">
+      汪淼觉得，来找他的这四个人是一个奇怪的组合：两名警察和两名军人，如果那两个军人是武警还算正常，但这是两名陆军军官。<br /><br />
+
+      汪淼第一眼就对来找他的警察没有好感。其实那名穿警服的年轻人还行，举止很有礼貌，但那位便衣就让人讨厌了。这人长得五大三粗，一脸横肉，穿着件脏兮兮的皮夹克，浑身烟味，说话粗声大嗓，是最令汪淼反感的那类人。<br /><br />
+
+      “汪淼？”那人问，直呼其名令汪淼很不舒服，况且那人同时还在点烟，头都不抬一下。不等汪淼回答，他就向旁边那位年轻人示意了一下，后者向汪淼出示了警官证，他点完烟后就直接向屋里闯。<br /><br />
+
+      “请不要在我家里抽烟。”汪淼拦住了他。<br /><br />
+
+      “哦，对不起，汪教授。这是我们史强队长。”年轻警官微笑着说，同时对姓史的使了个眼色。<br /><br />
+
+      “成，那就在楼道里说吧。”史强说着，深深地吸了一大口，手中的烟几乎燃下去一半，之后竟不见吐出烟来。“你问。”他又向年轻警官偏了一下头。<br /><br />
+
+      “汪教授，我们是想了解一下，最近你与‘科学边界’学会的成员有过接触，是吧？”<br /><br />
+
+      “‘科学边界’是一个在国际学术界很有影响的学术组织，成员都是著名学者。这样一个合法的学术组织，我怎么就不能接触了呢？”<br /><br />
+
+      “你看看你这个人！”史强大声说，“我们说它不合法了吗？我们说不让你接触了吗？”他说着，刚才吸进肚子里的烟都喷到汪淼脸上。<br /><br />
+
+      “那好，这属于个人隐私，我没必要回答你们的问题。”<br /><br />
+
+      “还啥都成隐私了，像你这样一个著名学者，总该对公共安全负责吧。”史强把手中的烟头扔掉，又从压扁了的烟盒里抽出一根。<br /><br />
+
+      “我有权不回答，你们请便吧。”汪淼说着要转身回屋。<br /><br />
+
+      “等等！”史强厉声说，同时朝旁边的年轻警官挥了一下手，“给他地址和电话，下午去走一趟。”<br /><br />
+
+      “你要干什么！”汪淼愤怒地质问，这争吵引得邻居们也探出头来，想看看出了什么事。<br /><br />
+
+      “史队！你说你――”年轻警官生气地将史强拉到一边，显然他的粗俗不止是让汪淼一人不适应。<br /><br />
+
+      <label>————— 文章摘自著名科幻小说《三体》</label>
+    </p>
+  </div>
+  <script type="text/javascript" src="./js/vue.js"></script>
+  <script type="text/javascript">
+    // TODO：请在下面实现需求
+    new Vue({
+      // 注意：请勿修改 data 选项中已提供的数据！！！
+      el: "#app",
+      data: {
+        bgList: ["#f6edd4", "#ebf4ea", "#e9f2f5", "#F6E8E4", "#000000"], // 阅读主题色列表（与设置主题的圆形色块一一对应）
+        activeIndex: 0,
+        colorIndex: '#f6edd4',
+        colors: '#000',
+        fontSizeBtn: 18,
+        CloseShow:true
+      },
+      computed: {
+        hColor() {
+          if (this.activeIndex === 4) {
+            return this.colors = '#fff'
+          }
+        }
+      },
+      methods: {
+        btns(index) {
+          this.activeIndex = index
+          this.colorIndex = this.bgList[index]
+        },
+        fzBtnMax() {
+          this.fontSizeBtn--
+        },
+        fzBtnMin() {
+          this.fontSizeBtn++
+        },
+        close() {
+         this.CloseShow = !this.CloseShow
+        },
+        seting() {
+         this.CloseShow = true
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>
