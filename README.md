@@ -56,6 +56,6 @@ Proxy可以监听数组和函数的变化
 
 gitee：https://gitee.com/coderxiaoluo
 
-CSDN:https://blog.csdn.net/m0_62336865?spm=1000.2115.3001.5343
+语雀：https://www.yuque.com/coderxiaoluo
 
 bilibili:https://space.bilibili.com/1810497501/
