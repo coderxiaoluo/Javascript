@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 50px;
+      height: 40px;
+      background: tomato;
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+      cursor: pointer;
+    }
+
+    body {
+      height: 3000px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>hello wrold</h1>
+  <div id="box"></div>
+  <script>
+    box.onclick = function () {
+      // scrollTo(0, 0)
+      scrollTo({
+        left: 0,
+        top: 0,
+        behavior: "smooth"
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- coderxiaoluo  不要停止我的代码 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 50px;
+      height: 40px;
+      background: tomato;
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+      cursor: pointer;
+    }
+
+    body {
+      height: 3000px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>hello world</h1>
+  <div id="box"></div>
+  <script>
+    const scrollClick = document.querySelector("#box")
+    let timer = 0
+    scrollClick.addEventListener("click", () => {
+      timer = setInterval(() => {
+        document.documentElement.scrollTop -= 80
+        if (document.documentElement.scrollTop <= 0) {
+          clearInterval(timer)
+        }
+      }, 30);
+    })
+
+    let str = 0
+    window.onscroll = function () {
+      if (str <= document.documentElement.scrollTop) {
+        clearInterval(timer)
+      }
+      str = document.documentElement.scrollTop
+    }
+  </script>
+
+</body>
+
+</html>

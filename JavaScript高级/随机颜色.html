@@ -1,0 +1,66 @@
+<!-- coderxiaoluo  不要停止我的代码 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      display: flex;
+
+    }
+
+    li {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul></ul>
+
+
+  <script>
+    function randomColor(type) {
+      // 随机数
+      function rangeRandom(a, b) {
+        const MAX = Math.max(a, b)
+        const MIN = Math.min(a, b)
+        let result = Math.floor(Math.random() * (MAX - MIN + 1) + MIN)
+        return result
+      }
+      // rgb格式
+      if (!type) {
+        const result = `rgb(${rangeRandom(0, 255)},${rangeRandom(0, 255)},${rangeRandom(0, 255)})`
+        return result
+      }
+      // 十六进制格式
+      let str = "#"
+      for (let i = 0; i < 3; i++) {
+        let n = rangeRandom(0, 255).toString(16)
+        if (n.length == 1) {
+          n = "0" + n
+        }
+        str += n
+      }
+      return str
+    }
+
+    const ulEl = document.querySelector("ul")
+    const liEl = document.createElement("li")
+    for (let i = 0; i < 11; i++) {
+      const li = liEl.cloneNode()
+      li.style.background = randomColor()
+      ulEl.append(li)
+    }
+
+  </script>
+
+</body>
+
+</html>

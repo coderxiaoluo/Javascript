@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const time = new Date()
+    const time2 = new Date("2023/3/7 12:30:00")
+
+    const diffTime = Math.round(Math.abs(time.getTime() - time2.getTime()) / 1000)
+
+    const day = parseInt(diffTime / 60 / 60 / 24)
+    console.log(day)
+
+    const House = parseInt(diffTime % (60 / 60 / 24) / (60 * 60))
+    console.log(House)
+
+
+    const Mount = parseInt(diffTime / 60)
+    console.log(Mount)
+  </script>
+
+</body>
+
+</html>

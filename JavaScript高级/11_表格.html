@@ -1,0 +1,79 @@
+<!-- coderxiaoluo  不要停止我的代码 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      text-align: center;
+      border-collapse: collapse;
+
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form method="get">
+    <p>姓名：<input type="text"></p>
+    <p>年龄：<input type="text"></p>
+    <p>性别：<input type="text"></p>
+  </form>
+  <button class="add">添加</button>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+
+  <script>
+    const inp = document.querySelectorAll("input[type='text']")
+    const addEl = document.querySelector(".add")
+    const tbody = document.querySelector("tbody")
+    addEl.addEventListener("click", (e) => {
+      const flg = document.createDocumentFragment()
+      const buttonEl = document.createElement("button")
+      const tdEl1 = document.createElement("td")
+      buttonEl.textContent = "删除"
+
+      buttonEl.addEventListener("click", (e) => {
+        const item = e.target
+        const tr = item.parentElement.parentElement
+        tr.remove()
+      })
+      tdEl1.append(buttonEl)
+      flg.append(tdEl1)
+      inp.forEach(item => {
+        const tdEl = document.createElement("td")
+        tdEl.innerHTML = item.value
+        flg.prepend(tdEl)
+      })
+      const trEl = document.createElement("tr")
+      trEl.append(flg)
+      tbody.append(trEl)
+    })
+  </script>
+</body>
+
+</html>
